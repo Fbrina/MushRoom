@@ -77,61 +77,63 @@
     <script src="/assets/js/todolist.js"></script>
     <!-- endinject -->
     <script>
-      $(document).ready(function() {
-        $('#form').validate({
-          rules: {
-            email: {
-              required: true,
-              email: true
-            },
-            password: {
-              required: true
-            }
-          },
-          messages: {
-            email: {
-              required: "Email harus diisi",
-              email: "Harus sesuai format email"
-            },
-            password: {
-              required: "Password harus diisi"
-            }
-          },
-          errorClass: "text-danger",
-          submitHandler: function() {
-            $.ajax({
-              url: '/api/signin',
-              method: 'POST',
-              type: 'POST',
-              data: {
-                'email': $('#email').val(),
-                'password': $('#password').val()
-              },
-              dataType: 'json',
-              success: function(res) {
-                if (res) {
-                  window.location.href = '/dashboard';
-                } else {
-                  swal({
-                    title: "Gagal",
-                    text: "Pengguna tidak ditemukan",
-                    icon: "error"
-                  });
+        $(document).ready(function() {
+            $('#form').validate({
+                rules: {
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    password: {
+                        required: true
+                    }
+                },
+                messages: {
+                    email: {
+                        required: 'Email harus diisi',
+                        email: 'Format email salah'
+                    },
+                    password: {
+                        required: 'Password harus diisi',
+                    }
+                },
+                errorClass: "text-danger",
+                submitHandler: function() {
+                    // Submit form here
+                    $.ajax({
+                        url: '/api/signin',
+                        type: 'POST',
+                        dataType: 'json',
+                        data: {
+                            email: $('#email').val(),
+                            password: $('#password').val(),
+                        },
+                        success: function(res) {
+                            if (res) {
+                                window.location = "{{ url('/dashboard') }}";
+                            } else {
+                                Swal.fire({
+                                    title: 'Error!',
+                                    text: 'Pengguna tidak ditemukan',
+                                    icon: 'error',
+                                    confirmButtonText: 'OK'
+                                })
+                            }
+                        },
+                        error: function(err) {
+                            Swal.fire({
+                                title: 'Error!',
+                                text: err.responseJSON.message,
+                                icon: 'error',
+                                confirmButtonText: 'OK'
+                            });
+                            console.log(err);
+                        }
+                    });
                 }
-              },
-              error: function(err) {
-                console.log(err);
-
-                swal({
-                    title: "Gagal",
-                    text: err.responseJSON.message,
-                    icon: "error"
-                  });
-              }
-            });
-          }
+            })
         });
-      });
     </script>
-  </body>
+</body>
+
 </html>
