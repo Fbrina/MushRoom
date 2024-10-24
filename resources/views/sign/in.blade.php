@@ -78,7 +78,60 @@
     <!-- endinject -->
     <script>
       $(document).ready(function() {
-        alert("tes");
+        $('#form').validate({
+          rules: {
+            email: {
+              required: true,
+              email: true
+            },
+            password: {
+              required: true
+            }
+          },
+          messages: {
+            email: {
+              required: "Email harus diisi",
+              email: "Harus sesuai format email"
+            },
+            password: {
+              required: "Password harus diisi"
+            }
+          },
+          errorClass: "text-danger",
+          submitHandler: function() {
+            $.ajax({
+              url: '{{url("/api/signin")}}',
+              method: 'POST',
+              type: 'POST',
+              data: {
+                email: $('#email').val(),
+                password: $('#password').val(),
+                _token: "{{csrf_token()}}"
+              },
+              dataType: 'json',
+              success: function(res) {
+                if (res) {
+                  window.location.href = '/dashboard';
+                } else {
+                  swal({
+                    title: "Gagal",
+                    text: "Pengguna tidak ditemukan",
+                    icon: "error"
+                  });
+                }
+              },
+              error: function(err) {
+                console.log(err);
+
+                swal({
+                    title: "Gagal",
+                    text: err.responseJSON.message,
+                    icon: "error"
+                  });
+              }
+            });
+          }
+        });
       });
     </script>
 </body>
