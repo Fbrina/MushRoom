@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MahasiswaController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -39,16 +40,21 @@ Route::delete('/user/{id}', function(string $id){
     return $response;
 });
 
-Route::post('/signin', function(Request $request){
-    $response = User::where('email', $request->input('email'))
-                    ->where('password', md5($request->input('password')))
-                    ->get();
-
-    $user = User::where('email', $request->input('email'))->first();
-
-    if(count($response)) {
-        $request->session()->put('name', $user->name);
-    }
+Route::group(['middleware' => ['web']], function(){
+    Route::post('/signin', function(Request $request){
+        $response = User::where('email', $request->input('email'))
+                        ->where('password', md5($request->input('password')))
+                        ->get();
     
-    return count($response);
+        if(count($response)) {
+            $request->session()->put('name', $response[0]->name);
+        }
+        
+        return count($response);
+    });
+
+    Route::get('/Mahasiswa', [MahasiswaController::class, 'index']);
+    Route::get('/AddMahasiswa', [MahasiswaController::class, 'create']);
+    Route::post('/Mahasiswa', [MahasiswaController::class, 'store']);
+    Route::delete('/Mahasiswa', [MahasiswaController::class, 'destroy']);
 });
