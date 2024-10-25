@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mush Room Signup</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <h2>Need Mushroom? Go to Mush Room</h2>
+            <img src="img/bg-img/now.png" alt="Mush Room App Mockup" class="mockup">
+        </div>
+
+        <div class="right-section">
+            <form class="signup-form">
+                <div class="logo">
+                    <img src="img/core-img/img.png" alt="Mush Room Logo">
+                </div>
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Email">
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="Phone Number">
+
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Password">
+
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" placeholder="Confirm Password">
+
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Username">
+
+                <div class="button-group">
+                    <button type="submit" class="create-btn" onclick="showSuccessMessage()">Create</button>
+                    <button type="button" class="cancel-btn" onclick="redirectToSignIn()">Cancel</button>
+                </div>
+                
+                <script>
+                    function showSuccessMessage() {
+                        // Menampilkan pop-up pesan
+                        alert('Account Succesfully Created');
+                        // Tambahkan logika untuk submit form atau redirect jika diperlukan
+                        // Misalnya window.location.href = 'home.html'; untuk redirect setelah form dikirim
+                    }
+                
+                    function redirectToSignIn() {
+                        window.location.href = 'signin.html'; // Ganti dengan URL halaman signin
+                    }
+                </script>
+                
+            </form>
+        </div>
+    </div>
+</body>
+</html>
