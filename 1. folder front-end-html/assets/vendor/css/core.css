@@ -75,7 +75,8 @@
   --bs-body-font-size: 0.9375rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.375;
-  --bs-body-color: #646e78;
+  /* warna trash logo */
+  --bs-body-color: #4D2703;
   --bs-body-color-rgb: 100, 110, 120;
   --bs-body-bg: #f5f5f9;
   --bs-body-bg-rgb: 245, 245, 249;
@@ -121,13 +122,54 @@
   --bs-form-invalid-color: #ff3e1d;
   --bs-form-invalid-border-color: #ff3e1d;
 }
+/* product.html produk.html  */
 
+/* button edit dan delete produk */
+.icon-actions {
+    text-align: right;
+}
+
+.btn-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px; /* Jarak antara ikon dan teks */
+    padding: 5px 10px; /* Ruang dalam untuk kesan tombol */
+    /* border: 1px solid #4D2703; Border agar tampak seperti tombol */
+    background-color: #4D2703; /* Warna latar belakang */
+    border-radius: 5px; /* Sudut membulat */
+    color: #fff; /* Warna teks */
+    text-decoration: none; /* Hilangkan garis bawah */
+    margin-right: 5px; /* Jarak antar tombol */
+}
+
+.btn-action i {
+    font-size: 16px; /* Ukuran ikon, bisa disesuaikan */
+}
+
+.btn-action:hover {
+    background-color: #f0e5d1;} /* Latar b
+
+/* highlight tiap card produk product */
+.custom-card {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan default di bawah */
+    transition: box-shadow 0.3s ease-in-out; /* Animasi saat hover */
+    border-radius: 8px; /* Sudut kartu sedikit membulat */
+}
+
+/* Bayangan saat hover untuk highlight lebih intens */
+.custom-card:hover {
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Bayangan lebih besar saat hover */
+}
+
+/* -------------------- */
+
+/* dasboard.html */
 /* css recent produk supaya bisa scroll setelah row 5 */
 .table-container {
   max-height: 200px; /* Atur tinggi maksimum sesuai kebutuhan */
   overflow-y: auto;  /* Menambahkan scrollbar vertikal */
 }
-
+/* --------------------------- */
 *,
 *::before,
 *::after {
@@ -358,10 +400,27 @@ figure {
   margin: 0 0 1rem;
 }
 
-img,
+/* img,
 svg {
   vertical-align: middle;
+} */
+
+/* atur text header */
+.welcome-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensures space between text and image */
+    padding: 20px; /* Adjusts padding as needed */
 }
+
+
+/* foto hp header welcome */
+.welcome-section img {
+    max-height: 150px; /* Adjust height as needed */
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
 
 table {
   caption-side: bottom;
@@ -2520,6 +2579,7 @@ progress {
   --bs-table-bg-state: initial;
   --bs-table-color: var(--bs-body-color);
   --bs-table-bg: transparent;
+  /* border antar table */
   --bs-table-border-color: #e4e6e8;
   --bs-table-accent-bg: transparent;
   --bs-table-striped-color: var(--bs-body-color);
@@ -2535,7 +2595,8 @@ progress {
 }
 .table > :not(caption) > * > * {
   padding: 0.782rem 1.25rem;
-  color: var(--bs-table-color-state, var(--bs-table-color-type, var(--bs-table-color)));
+  /* font color isi tabel table dashboard  */
+  color: var(--bs-table-color-state, #4D2703);
   background-color: var(--bs-table-bg);
   border-bottom-width: var(--bs-border-width);
   -webkit-box-shadow: inset 0 0 0 9999px var(--bs-table-bg-state, var(--bs-table-bg-type, var(--bs-table-accent-bg)));
@@ -3254,7 +3315,7 @@ textarea.form-control-lg {
   height: 1.375rem;
   -moz-appearance: none;
        appearance: none;
-  background-color: #696cff;
+  background-color: #FFF0D4;
   border: 0;
   border-radius: 1rem;
   -moz-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -3267,7 +3328,7 @@ textarea.form-control-lg {
   }
 }
 .form-range::-moz-range-thumb:active {
-  background-color: #696cff;
+  background-color: #FFF0D4;
 }
 .form-range::-moz-range-track {
   width: 100%;
@@ -3542,7 +3603,9 @@ textarea.form-control-lg {
   --bs-btn-font-size: 0.9375rem;
   --bs-btn-font-weight: 500;
   --bs-btn-line-height: 1.375;
+
   --bs-btn-color: var(--bs-body-color);
+
   --bs-btn-bg: transparent;
   --bs-btn-border-width: var(--bs-border-width);
   --bs-btn-border-color: transparent;
@@ -4362,8 +4425,8 @@ textarea.form-control-lg {
   --bs-nav-link-padding-y: 0.5435rem;
   --bs-nav-link-font-size: 0.9375rem;
   --bs-nav-link-font-weight: 500;
-  --bs-nav-link-color: var(--bs-navbar-color);
-  --bs-nav-link-hover-color: var(--bs-navbar-hover-color);
+  --bs-nav-link-color: #4D2703
+  --bs-nav-link-hover-color: #FFF0D4
   --bs-nav-link-disabled-color: var(--bs-navbar-disabled-color);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4853,7 +4916,7 @@ textarea.form-control-lg {
   --bs-card-spacer-y: 1.5rem;
   --bs-card-spacer-x: 1.5rem;
   --bs-card-title-spacer-y: 0.5rem;
-  --bs-card-title-color: #384551;
+  --bs-card-title-color: #4D2703;
   --bs-card-subtitle-color: #858d95;
   --bs-card-border-width: 0;
   --bs-card-border-color: #e4e6e8;
@@ -8505,11 +8568,12 @@ a.invert-bg-dark:hover, a.invert-bg-dark:focus {
     display: inline-table;
   }
 }
+/* font color sub judul tabel, no order no, customer name, last update, no 1 2 3 nya */
 .table th {
   text-transform: uppercase;
   font-size: 0.8125rem;
   letter-spacing: 0.2px;
-  color: #384551;
+  color: #4D2703;
 }
 
 .table-dark th {
@@ -24607,11 +24671,13 @@ html:not(.layout-menu-fixed) .menu-inner-shadow {
           align-items: stretch;
 }
 
+/* bg color utk belakang navbar */
 .layout-page,
 .content-wrapper,
 .content-wrapper > *,
 .layout-menu {
   min-height: 1px;
+  background-color: #FFF0D4;
 }
 
 .layout-navbar,
@@ -24679,6 +24745,7 @@ html:not(.layout-menu-fixed) .menu-inner-shadow {
   z-index: -1;
 }
 
+/* dot bell notifications */
 .layout-navbar {
   position: relative;
   padding-top: 0.5rem;
@@ -24686,7 +24753,7 @@ html:not(.layout-menu-fixed) .menu-inner-shadow {
   height: 3.875rem;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  color: #646e78;
+  color: #4D2703;
   z-index: 2;
 }
 .layout-navbar .navbar {
@@ -24696,6 +24763,7 @@ html:not(.layout-menu-fixed) .menu-inner-shadow {
 .layout-navbar .navbar-nav-right {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
+
 }
 .layout-navbar .navbar-search-wrapper .search-input,
 .layout-navbar .navbar-search-wrapper .input-group-text {
@@ -24969,7 +25037,8 @@ html:not(.layout-footer-fixed) .content-wrapper {
   }
   .layout-navbar-full .layout-menu {
     z-index: 9;
-  }
+}
+
   .layout-content-navbar .layout-navbar {
     z-index: 9;
   }
