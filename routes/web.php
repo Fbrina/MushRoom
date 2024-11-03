@@ -7,6 +7,17 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard.index');
+    return view('Dashboard.index');
 });
 
+Route::get('/product', function () {
+    return view('Product.index');
+});
+
+Route::get('/rate', function () {
+    return view('Rate.index');
+});
+
+Route::get('/order', function () {
+    return view('Order.index');
+});
