@@ -1,0 +1,103 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cokmud"
+    tools:context=".formlogin">
+
+    <!-- Kotak Putih dengan ukuran responsif -->
+    <LinearLayout
+        android:id="@+id/whiteBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corners"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.994">
+
+        <!-- Teks LOGIN di tengah -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:text="LOGIN"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+        <!-- Teks EMAIL -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:gravity="start"
+            android:text="Email"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <!-- Email Input -->
+        <EditText
+            android:id="@+id/emailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:hint="Masukkan email"
+            android:inputType="textEmailAddress"
+            android:padding="12dp" />
+
+        <!-- Teks PASSWORD -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:gravity="start"
+            android:text="Password"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <!-- Password Input -->
+        <EditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:hint="Masukkan password"
+            android:inputType="textPassword"
+            android:padding="12dp" />
+
+        <!-- Login Button -->
+        <Button
+            android:id="@+id/loginButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/cokmud"
+            android:text="Login"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/createAccountText"
+            android:layout_width="400dp"
+            android:layout_height="50dp"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:padding="10dp"
+            android:text="Doesn't have an account?"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:clickable="true"
+            android:focusable="true" />
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
