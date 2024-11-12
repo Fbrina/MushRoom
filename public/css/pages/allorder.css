@@ -1,0 +1,608 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "public sans", sans-serif;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background-color: #fff;
+  padding: 15px;
+  padding-bottom: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  max-width: 95%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  margin-top: 20px;
+  margin-right: 0;
+  margin-left: 30px;
+}
+
+.mb-0 {
+  margin-left: 30px;
+}
+
+.order-tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+/* Container header tab */
+.tab-header {
+  display: flex;
+  justify-content: flex-start; /* Semua tab di kiri */
+  /* border-bottom: 2px solid #ccc; */
+  font-size: 12px; /* Ukuran font lebih kecil */
+  margin-bottom: 5px;
+}
+
+/* Gaya tombol tab */
+.tab-button {
+  padding: 8px 12px; /* Padding kecil untuk tab */
+  background: none;
+  border: none;
+  font-size: 15px; /* Ukuran font lebih kecil */
+  cursor: pointer;
+  text-align: left; /* Rata kiri untuk setiap teks tab */
+  width: auto; /* Ukuran tombol sesuai teks */
+}
+
+.tab-button.active {
+  border-bottom: 2px solid #000;
+  font-weight: bold;
+}
+
+.tab-button:hover {
+  color: #333;
+}
+
+/* .tab-button.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #000;
+} */
+
+.app-brand-text {
+  margin-top: 15px;
+}
+
+.tab-container {
+  width: 100%; /* Mengisi lebar penuh */
+  overflow-x: auto;
+  background-color: white;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  margin-top: 20px;
+  margin-left: 15px;
+  padding: 15px;
+  text-align: center;
+  border-bottom: 2px solid #e9e9e9;
+  /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1); */
+}
+
+/* .tab-header {
+  display: flex;
+  border-bottom: 2px solid #ccc;
+}
+
+.tab-button {
+  flex: 1;
+  padding: 10px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.tab-button.active {
+  border-bottom: 2px solid #000; 
+  font-weight: bold;
+} */
+
+.tab-content-container {
+  border-top: none; /* Konten menyatu dengan tab */
+  padding: 10px;
+  padding-top: 5px;
+  margin-left: -30px;
+  overflow-x: auto;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block; /* Menampilkan konten yang aktif */
+}
+
+/* table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table,
+th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  font-weight: 600;
+}
+
+table,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+} */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0 10px;
+  margin-top: 0px;
+}
+
+.judul-table {
+  background-color: #f2f2f2;
+  color: #333;
+  max-height: 100px;
+}
+
+table th {
+  padding: 15px;
+  text-align: center;
+  font-weight: 600;
+  border-bottom: 2px solid #e9e9e9;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+table tr {
+  background-color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+table tr:hover {
+  background-color: #f9f9f9;
+}
+
+table td {
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1); /* Shadow di atas header */
+}
+
+/* Menggunakan flexbox untuk membuat gambar dan teks di tengah secara vertikal */
+table td.product-cell {
+  display: flex;
+  align-items: center; /* Vertically align image and text */
+  justify-content: center; /* Center content horizontally if needed */
+  max-width: 200px; /* Sesuaikan lebar sesuai kebutuhan */
+  white-space: normal;
+}
+
+table td.product-celll {
+  align-items: center; /* Vertically align image and text */
+  justify-content: center; /* Center content horizontally if needed */
+}
+
+table td img {
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+  margin-right: 8px; /* Spasi antara gambar dan teks */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Shadow pada gambar produk */
+}
+
+#status-1 {
+  font-weight: bold;
+  color: #e67e22;
+}
+
+/* Tombol Accept dan Decline */
+/* Sel Tabel dengan Tombol dan Ikon */
+.product-cellss {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Vertically center the buttons and text */
+  justify-content: center; /* Center content horizontally */
+  gap: 5px; /* Spasi antara tombol dan teks */
+}
+
+.product-cells {
+  /* display: flex;
+  flex-direction: column; */
+  align-items: center; /* Vertically center the buttons and text */
+  justify-content: center; /* Center content horizontally */
+  gap: 10px; /* Spasi antara tombol dan teks */
+}
+
+/* Tombol Setujui */
+.button-accept {
+  padding: 8px 12px; /* Meningkatkan padding */
+  font-size: 14px;
+  color: #fff;
+  background-color: #4d2703;
+  border: none;
+  border-radius: 3px; /* Mengurangi radius untuk sudut */
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.button-accept:hover {
+  background-color: #4d270385; /* Warna hijau lebih terang saat hover */
+}
+
+/* Tombol Decline */
+.button-decline {
+  padding: 8px 12px; /* Meningkatkan padding */
+  font-size: 14px;
+  color: #fff;
+  background-color: #e74c3c; /* Warna merah untuk Decline */
+  border: none;
+  border-radius: 4px; /* Sudut membulat pada tombol */
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease; /* Transisi warna saat hover */
+}
+
+.button-decline:hover {
+  background-color: #c0392b; /* Warna merah lebih gelap saat hover */
+}
+
+/* Teks View Details */
+.button-detail {
+  padding: 8px 14px; /* Meningkatkan padding */
+  font-size: 14px;
+  color: #fff;
+  background-color: #4d2703; /* Warna hijau untuk Accept */
+  border: none;
+  border-radius: 4px; /* Sudut membulat pada tombol */
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease; /* Transisi warna saat hover */
+}
+.button-detail:hover {
+  background-color: #4d27037c; /* Warna biru lebih gelap saat hover */
+}
+
+/* Modal Purchase Order */
+/* Modal Purchase Order */
+.modal-purchase-order {
+  font-family: "public sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  z-index: 1000;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 1000px;
+  max-height: 90vh;
+  overflow: auto;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+/* Modal Purchase Order */
+/* .modal-purchase-order {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  z-index: 1000;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 900px;
+  max-height: 95vh;
+  overflow-y: auto;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+} */
+
+/* Container untuk menutupi seluruh layar */
+.purchase-order-container {
+  position: fixed;
+  z-index: 999999999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Styling untuk header */
+header h2 {
+  font-family: "public sans", sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.close-button:hover {
+  color: red;
+}
+
+/* Container untuk seluruh tampilan */
+/* .purchase-order-container {
+      width: 60%;
+      margin: 20px auto;
+      border: 1px solid #ddd;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    } */
+
+/* Header */
+/* .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header h2 {
+      font-size: 20px;
+      margin: 0;
+    } */
+
+/* Tombol Kembali */
+.back-button {
+  background-color: orange;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Status label */
+.status-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.status {
+  color: red;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.draft-button {
+  display: flex;
+  flex-direction: row;
+}
+/* Tombol di bagian atas */
+.action-buttons {
+  margin-left: 650px;
+  display: flex;
+  gap: 10px;
+  justify-content: right;
+  align-content: right;
+}
+
+.action-buttons button {
+  padding: 5px 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+}
+
+.approve-button {
+  background-color: #4d2703;
+}
+
+.submit-button {
+  background-color: #4d2703;
+}
+
+.action-buttons .print-button {
+  background-color: #ececec; /* Warna latar tombol */
+  color: #4d2703; /* Warna teks dan ikon */
+  display: flex;
+  align-items: center;
+  border: none;
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.action-buttons .print-button i {
+  margin-right: 5px;
+  stroke: #4d2703; /* Warna ikon Feather */
+}
+
+/* Hilangkan efek fokus pada tombol */
+.print-button:focus {
+  outline: none;
+}
+
+.draft .status {
+  color: #4d2703;
+}
+/* Tabel pesanan umum (order-table) */
+.order-table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.order-table th,
+.order-table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+/* Tabel pesanan spesifik (order-table-1) tanpa border */
+.order-table-1 {
+  width: 100%;
+  margin-top: 10px;
+  border-collapse: collapse;
+}
+
+.order-table-1 th,
+.order-table-1 td {
+  padding: 10px;
+  text-align: left;
+  border: none;
+}
+
+/* Subtotal dan total */
+.summary-all {
+  margin-top: 20px;
+  margin-left: 8px;
+}
+
+.summary {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.summary .label {
+  font-weight: bold;
+}
+
+/* Pagination Styles */
+.pagination {
+  display: flex;
+  align-items: right;
+  justify-content: right;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.pagination button {
+  padding: 8px 12px;
+  margin: 0 0px;
+  font-size: 14px;
+  background-color: #ebebeb;
+  color: #4d2703;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:hover {
+  background-color: #c4c4c4;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+#page-info {
+  margin: 0 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Delivered */
+.delivered-table {
+  background-color: #f2f2f2;
+  color: #333;
+}
+/* Gaya dasar untuk tab-button */
+.tab-button {
+  padding: 10px 20px;
+  border: none;
+  background: none;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+}
+
+/* Garis bawah untuk tab aktif */
+.tab-button.active {
+  border-bottom: 3px solid #4d2703; /* Ganti warna sesuai keinginan */
+  font-weight: bold;
+  color: #4d2703;
+}
+
+/* Mengubah warna pada hover */
+.tab-button:hover {
+  color: #4d2703;
+}
+
+.tab-button.active {
+  border-bottom: 3px solid #4d2703 !important; /* Ganti warna sesuai kebutuhan */
+  font-weight: bold;
+  color: #4d2703;
+}
+
+/* Tombol View Delivered */
+/* Style untuk modal */
+.modal {
+  display: none; /* Sembunyikan secara default */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4); /* Warna background semi-transparan */
+}
+
+/* Konten modal */
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60%;
+  border-radius: 8px;
+}
+
+/* Tombol close */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+}

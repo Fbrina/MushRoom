@@ -1,0 +1,900 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "public sans", sans-serif;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Bagian filter export dll */
+.container {
+  display: fixed;
+  background-color: #fff;
+  padding: 15px;
+  padding-bottom: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  max-width: 95%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  margin-top: 20px;
+  margin-right: 0;
+  margin-left: 30px;
+  max-height: 500px; /* Atur tinggi maksimal */
+  overflow-y: auto;
+}
+
+.mb-0 {
+  margin-left: 30px;
+}
+
+/* Tab */
+.tab-container {
+  width: 100%; /* Mengisi lebar penuh */
+  overflow-x: auto;
+  background-color: white;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  margin-top: 20px;
+  margin-left: 15px;
+  padding: 15px;
+  text-align: center;
+  border-bottom: 2px solid #e9e9e9;
+  /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1); */
+}
+
+/* Container header tab */
+.tab-header {
+  display: flex;
+  justify-content: flex-start; /* Semua tab di kiri */
+  /* border-bottom: 2px solid #ccc; */
+  font-size: 12px; /* Ukuran font lebih kecil */
+  margin-bottom: 5px;
+}
+
+/* Gaya tombol tab */
+.tab-button {
+  padding: 8px 12px; /* Padding kecil untuk tab */
+  background: none;
+  border: none;
+  font-size: 15px; /* Ukuran font lebih kecil */
+  cursor: pointer;
+  text-align: left; /* Rata kiri untuk setiap teks tab */
+  width: auto; /* Ukuran tombol sesuai teks */
+  /* padding: 10px 20px;
+  border: none;
+  background: none;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+  position: relative; */
+}
+
+/* Garis bawah untuk tab aktif */
+
+.tab-button.active {
+  border-bottom: 3px solid #4d2703; /* Ganti warna sesuai keinginan */
+  font-weight: bold;
+  color: #4d2703;
+}
+
+/* Mengubah warna pada hover */
+.tab-button:hover {
+  color: #4d2703;
+}
+
+/* .tab-button.active {
+  border-bottom: 3px solid #4d2703 !important;
+  font-weight: bold;
+  color: #4d2703;
+} */
+
+.tab-content-container {
+  border-top: none; /* Konten menyatu dengan tab */
+  padding: 10px;
+  padding-top: 5px;
+  margin-left: -30px;
+}
+
+.tab-content {
+  display: none;
+  /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1); */
+}
+
+.tab-content.active {
+  display: block; /* Menampilkan konten yang aktif */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0 10px;
+  margin-top: 0px;
+}
+
+table th {
+  padding: 15px;
+  text-align: center;
+  font-weight: 600;
+  border-bottom: 2px solid #e9e9e9;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+table tr {
+  background-color: #fff;
+  transition: 0.3s ease;
+}
+
+table tr:hover {
+  background-color: #f9f9f9;
+}
+
+table td {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  max-width: 150px;
+  max-height: 100px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 15px;
+  text-align: center;
+  height: 80px; /* Atur tinggi tetap pada sel */
+  vertical-align: middle; /* Vertikal center alignment */
+  border-right: #000;
+}
+
+.judul-table {
+  background-color: #f2f2f2;
+  color: #4d2703;
+  max-height: 100px;
+}
+
+.isi-table {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  color: #4d2703;
+  max-height: 100px;
+}
+
+/* Menggunakan flexbox untuk membuat gambar dan teks di tengah secara vertikal */
+table td.product-cell div {
+  display: flex;
+  flex-direction: column; /* Susunan vertikal */
+  align-items: center; /* Gambar dan teks di tengah */
+}
+
+table td.product-cell p {
+  margin: 0; /* Menghilangkan margin default pada paragraf */
+}
+
+table td.product-celll {
+  align-items: center; /* Vertically align image and text */
+  justify-content: center; /* Center content horizontally if needed */
+}
+
+table td img {
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+  margin-right: 8px; /* Spasi antara gambar dan teks */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Shadow pada gambar produk */
+}
+
+#status-1 {
+  font-weight: bold;
+  color: #e67e22;
+}
+
+/* Pagination Styles */
+.pagination {
+  display: fixed;
+  align-items: center;
+  justify-content: flex-start; /* Mengatur agar elemen rata kiri */
+  margin-top: 20px;
+  font-size: 16px;
+  justify-content: flex-end; /* Agar tetap di kanan */
+  position: sticky;
+  right: 0; /* Posisikan di kanan */
+  z-index: 100000;
+}
+
+.pagination button {
+  padding: 8px 12px;
+  margin: 0 5px; /* Memberi jarak antar tombol */
+  font-size: 14px;
+  background-color: #ebebeb;
+  color: #4d2703;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:hover {
+  background-color: #c4c4c4;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+#page-info {
+  margin: 0 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Teks View Details purchase order */
+.button-detail {
+  padding: 8px 14px; /* Meningkatkan padding */
+  font-size: 14px;
+  color: #fff;
+  background-color: #4d2703; /* Warna hijau untuk Accept */
+  border: none;
+  border-radius: 4px; /* Sudut membulat pada tombol */
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease; /* Transisi warna saat hover */
+}
+.button-detail:hover {
+  background-color: #4d27037c; /* Warna biru lebih gelap saat hover */
+}
+
+/* tombol setuju dan tolak purchase order*/
+td.btn-acc-dec {
+  max-width: 150px;
+  height: 100px;
+  display: flex; /* Gunakan flexbox untuk sejajarkan tombol dalam satu baris */
+  flex-direction: column;
+  justify-content: center; /* Posisikan tombol di tengah */
+  align-items: center; /* Vertikal center alignment */
+  padding: 10px; /* Hapus padding tambahan */
+  text-align: center; /* Pastikan teks (tombol) di tengah */
+  border: none;
+  box-shadow: none;
+}
+
+/* Tombol Setujui */
+.button-accept {
+  background-color: #4d2703;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: bold;
+  width: 80px;
+  cursor: pointer;
+  border-radius: 4px; /* Membuat sudut tombol melengkung */
+  transition: background-color 0.3s ease;
+}
+
+.button-accept:hover {
+  background-color: #4d270385; /* Warna hijau lebih terang saat hover */
+}
+
+/* Tombol Decline */
+.button-decline {
+  background-color: #e74c3c; /* Warna merah untuk tombol Menolak */
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  width: 80px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.button-decline:hover {
+  background-color: #c0392b; /* Warna merah lebih gelap saat hover */
+}
+
+/* modal box purchase order */
+.purchase-order-container {
+  position: fixed;
+  z-index: 999999999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-purchase-order {
+  font-family: "public sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  z-index: 1000;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 1000px;
+  max-height: 90vh;
+  overflow: auto;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  gap: 10px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.25em;
+  margin-bottom: 15px;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.info-shipment {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.status {
+  font-weight: bold;
+  color: #4d2703;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.print-button,
+.approve-button {
+  padding: 8px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.reject-button {
+  padding: 8px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.print-button {
+  background-color: #ececec;
+  color: #4d2703;
+}
+
+.approve-button,
+.reject-button {
+  background-color: #4d2703;
+  color: #fff;
+}
+
+.product-detail {
+  display: grid;
+  grid-template-columns: 150px 1fr; /* Gambar di kolom pertama, info di kolom kedua */
+  grid-gap: 0px;
+  align-items: center;
+  padding: 1px;
+  border-bottom: 2px solid #ddd;
+}
+
+.photo img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.product-detail .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.product-detail .info p {
+  margin: 5px 0;
+}
+
+.product-detail .info-bold {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.product-detail .ttl {
+  grid-column: 2; /* Tempatkan .ttl di kolom kedua (paling kanan) */
+  text-align: right; /* Rata kanan teks */
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.product-detail .ttl p {
+  margin: 0;
+}
+
+.d-tbl {
+  width: 100%;
+  padding: 10px;
+  background-color: #fff;
+  /* border-top: 1px solid #ccc; /* Garis di atas */
+  /* border-bottom: 1px solid #ccc; Garis di bawah */
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1); /* Box shadow pada div */
+}
+
+.detail-row {
+  display: flex;
+  padding: 5px 0;
+}
+
+.label {
+  font-family: "public sans", sans-serif;
+  width: 100px; /* Atur sesuai kebutuhan untuk mengatur lebar kolom label */
+}
+
+.value {
+  flex: 1;
+}
+
+.detail-table {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: none; /* Garis horizontal */
+  padding: 10px 0; /* Padding di atas dan bawah */
+}
+
+.label-byr {
+  margin-left: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+.value-byr {
+  font-size: 14px;
+  color: #333;
+}
+
+.summary-all {
+  width: 100%;
+  max-width: 100%;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.summary {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #e0e0e0; /* Garis bawah untuk pemisah antar baris */
+  white-space: nowrap; /* Pastikan konten tetap pada satu baris */
+}
+
+.summary.total {
+  border-bottom: none; /* Hapus garis bawah pada item terakhir */
+  font-weight: bold; /* Bold untuk total pembayaran */
+}
+
+.label-sm {
+  color: #333;
+  font-size: 14px;
+  font-weight: normal; /* Label tidak terlalu tebal */
+  white-space: nowrap; /* Pastikan label tetap dalam satu baris */
+}
+
+.amount {
+  color: #333;
+  font-size: 14px;
+  font-weight: bold; /* Nilai lebih tebal */
+}
+
+/* Delivered Tab */
+.delivered-table {
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+.status {
+  color: red;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Container untuk order */
+/* Styling untuk container order */
+.order-container {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+
+.bg-2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Styling untuk info pengguna dan jamur */
+.order-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: left;
+  margin-bottom: 10px;
+}
+
+/* Styling untuk user info (ikon dan username) */
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.username {
+  font-size: 14px;
+}
+
+/* Styling untuk jamur info */
+.jamur-info {
+  display: flex;
+  align-items: center;
+}
+
+.jmr {
+  display: flex;
+  align-items: center;
+}
+
+.jamur-photo {
+  width: 85px;
+  height: 85px;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-items: left;
+  text-align: left;
+}
+
+.text .jamur-name {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.item-quantity {
+  font-size: 14px;
+  color: #666;
+}
+
+.sts {
+  display: flex;
+  width: 200px;
+  flex-direction: column; /* Agar elemen status dan tanggal ditampilkan secara vertikal */
+  align-items: flex-end; /* Menyusun elemen di kiri */
+  margin-left: 15px; /* Agar ada jarak antara status dan tepi kontainer */
+  align-items: right;
+}
+
+.status-bar {
+  padding: 5px 10px;
+  background-color: white;
+  color: #28a745;
+  border-color: #4d2703bb;
+  border-radius: 4px;
+  font-weight: bold;
+  text-align: right;
+  width: fit-content; /* Sesuaikan ukuran konten */
+}
+
+.status-text {
+  font-size: 14px;
+}
+
+.status-date {
+  margin-top: 5px; /* Memberikan jarak antara status dan tanggal */
+  font-size: 12px; /* Ukuran font lebih kecil untuk tanggal */
+  color: #666; /* Warna teks tanggal yang lebih netral */
+}
+
+/* Styling untuk total belanja */
+.total-belanja {
+  display: flex;
+  flex-direction: column; /* Membuat elemen ditata secara vertikal */
+  align-items: right; /* Menempatkan elemen di sebelah kanan */
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: right;
+}
+
+.total-belanja span {
+  color: #4d2703; /* Warna teks */
+}
+
+.total-price {
+  color: #4d2703; /* Warna teks untuk harga */
+  margin-top: 5px; /* Menambahkan jarak antara Total Belanja dan harga */
+}
+
+/* canceled */
+/* Styling untuk tab Dibatalkan */
+.canceled-order-container {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+
+.canceled-bg {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Informasi pengguna dan jamur */
+.canceled-order-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: left;
+  margin-bottom: 10px;
+}
+
+.canceled-user-info {
+  display: flex;
+  align-items: center;
+}
+
+.canceled-user-icon {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.canceled-username {
+  font-size: 14px;
+}
+
+.canceled-jamur-info {
+  display: flex;
+  align-items: center;
+}
+
+.canceled-jmr {
+  display: flex;
+  align-items: center;
+}
+
+.canceled-jamur-photo {
+  width: 85px;
+  height: 85px;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.canceled-text {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  text-align: left;
+}
+
+.canceled-jamur-name {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.canceled-item-quantity {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Styling khusus untuk status "Dibatalkan" */
+.canceled-sts {
+  display: flex;
+  width: 200px;
+  flex-direction: column; /* Agar elemen status dan tanggal ditampilkan secara vertikal */
+  align-items: flex-end; /* Menyusun elemen di kiri */
+  margin-left: 15px; /* Agar ada jarak antara status dan tepi kontainer */
+  align-items: right;
+}
+
+.canceled-sts .canceled-status-bar {
+  padding: 5px 10px;
+  background-color: white;
+  color: #e74c3c;
+  border-color: #4d2703bb;
+  border-radius: 4px;
+  font-weight: bold;
+  text-align: right;
+  width: fit-content; /* Sesuaikan ukuran konten */
+  padding: 5px 10px;
+}
+
+.button-accept-cncl,
+.button-decline-cncl {
+  margin-top: 15px;
+  padding: 5px 10px; /* Meningkatkan padding */
+  font-size: 12px;
+  align-items: flex-end;
+  border: none;
+  border-radius: 4px; /* Sudut membulat pada tombol */
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.button-accept-cncl {
+  color: #fff;
+  background-color: #4d2703;
+}
+
+.button-decline-cncl {
+  background-color: #e74c3c; /* Warna merah untuk tombol Menolak */
+  color: white;
+}
+
+.canceled-status-date {
+  font-size: 12px;
+  color: #666;
+}
+
+/* Styling untuk total belanja */
+.total-pembayaran-canceled {
+  display: flex;
+  flex-direction: column; /* Membuat elemen ditata secara vertikal */
+  align-items: right; /* Menempatkan elemen di sebelah kanan */
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: right;
+}
+
+.total-pembayaran-canceled span {
+  font-size: 14px;
+  color: #4d2703;
+}
+
+.canceled-total-price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #e74c3c; /* Warna merah untuk total harga */
+}
+
+.detail-cancel {
+  margin-top: 15px;
+  padding: 5px 10px; /* Meningkatkan padding */
+  font-size: 12px;
+  align-items: flex-end;
+  color: #fff;
+  background-color: #4d2703; /* Warna hijau untuk Accept */
+  border: none;
+  border-radius: 4px; /* Sudut membulat pada tombol */
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease; /* Transisi warna saat hover */
+}
+
+.canceled-detail {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  margin-top: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  color: #333;
+  font-size: 14px;
+  text-align: left;
+}
+
+.canceled-detail h4 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #4d2703;
+  text-align: left;
+}
+
+.close-button-cncl {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+/* Kontainer untuk seluruh informasi pengembalian */
+.refund-info-container {
+  display: flex;
+  justify-content: flex-end; /* Menempatkan konten ke kanan */
+  padding-right: 20px; /* Menambahkan jarak ke kanan jika perlu */
+
+  border-top: 1px solid #ddd;
+}
+
+.refund-info {
+  margin-top: 15px;
+  padding-top: 10px;
+  color: #666;
+  text-align: left; /* Mengatur agar teks di dalamnya tetap rata kiri */
+}
+
+.refund-info h5 {
+  font-size: 15px;
+  margin-bottom: 8px;
+  color: #4d2703;
+  margin-left: 10px;
+}
+
+.refund-detail {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 5px 15px;
+}
+
+.refund-detail p {
+  display: contents;
+  margin: 5px 0;
+}
+
+.refund-detail p strong {
+  text-align: right;
+  display: inline-block;
+  width: 100%;
+  color: #333;
+}
+
+.refund-detail p span {
+  color: #666;
+}
+
+/* tambahan */
+/* Menjamin posisi elemen pencarian dan ikon profil tetap di atas */
+.search-container,
+.profile-icon {
+  position: relative; /* Atur posisi relatif */
+  z-index: 10; /* Atur z-index agar tetap di atas elemen lainnya */
+}
+
+/* Jika Anda menggunakan scroll pada kontainer utama, pastikan overflow ditangani dengan benar */
+/* .tab-content {
+  overflow-y: auto; 
+} */
