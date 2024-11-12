@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mush Room Login</title>
-    <link rel="stylesheet" href="../../public/css/signin.css') }}">
+    <link rel="stylesheet" href="../../../public/css/signin.css') }}">
     <!-- Favicon -->
-    <link rel="icon" href="../../public/img/core-img/logo1.png') }}">
+    <link rel="icon" href="../../../public/img/core-img/logo1.png') }}">
 </head>
 <body>
     <a href="{{ route('home') }}" class="close-btn">
-        <img src="../../public/img/core-img/cancel.png') }}" alt="Close">
+        <img src="../../../public/img/core-img/cancel.png') }}" alt="Close">
     </a>
     <div class="login-container">
         <div class="login-box">
             <div class="logo">
-                <img src="../../public/img/core-img/img.png') }}" alt="Mush Room Logo">
+                <img src="../../../public/img/core-img/img.png') }}" alt="Mush Room Logo">
             </div>
 
             <!-- Main Login Form -->
