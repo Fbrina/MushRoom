@@ -18,6 +18,7 @@ Route::get('/user', function () {
     return User::all();
 }
 
+
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'signin']);
 Route::get('/login', function (Request $request) {
